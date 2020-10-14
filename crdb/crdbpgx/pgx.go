@@ -51,15 +51,15 @@ type pgxTxAdapter struct {
 var _ crdb.Tx = pgxTxAdapter{}
 
 func (tx pgxTxAdapter) Commit(ctx context.Context) error {
-	return tx.tx.Commit(ctx)
+	return tx.tx.Commit()
 }
 
 func (tx pgxTxAdapter) Rollback(ctx context.Context) error {
-	return tx.tx.Rollback(ctx)
+	return tx.tx.Rollback()
 }
 
 // Exec is part of the crdb.Tx interface.
 func (tx pgxTxAdapter) Exec(ctx context.Context, q string, args ...interface{}) error {
-	_, err := tx.tx.Exec(ctx, q, args...)
+	_, err := tx.tx.Exec(q, args...)
 	return err
 }
