@@ -3,6 +3,7 @@ module github.com/markdiener10/cockroach-go/v2
 go 1.13
 
 require (
+	github.com/markdiener10/cockroach-go/v2 v2.0.8
 	github.com/jackc/pgx/v4 v4.6.0
 	github.com/jinzhu/gorm v1.9.12
 	github.com/jmoiron/sqlx v1.2.0
